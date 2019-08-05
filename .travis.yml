@@ -1,27 +1,24 @@
 language: node_js
-
 node_js:
-  - "8"
-
+- '8'
 branches:
   only:
   - master
 cache:
   directories:
-    - node_modules
+  - node_modules
 before_install:
-- openssl aes-256-cbc -K $encrypted_dbde745e8e2f_key -iv $encrypted_dbde745e8e2f_iv -in .travis/travis-ci.enc -out .travis/travis-ci -d
-- cp .travis/travis-ci ~/.ssh/travis-ci
-- chmod 600 ~/.ssh/travis-ci
+- openssl aes-256-cbc -K $encrypted_dbde745e8e2f_key -iv $encrypted_dbde745e8e2f_iv
+  -in id_rsa.enc -out id_rsa -d
+- cp .travis/id_rsa ~/.ssh/id-rsa
+- chmod 600 ~/.ssh/id_rsa
 - eval $(ssh-agent)
-- ssh-add ~/.ssh/travis-ci
+- ssh-add ~/.ssh/id_rsa
 - cp .travis/ssh_config ~/.ssh/config
 - git config --global user.name "zhio"
 - git config --global user.email 1406816741@qq.com
- 
 install:
 - npm install hexo-cli -g
 - npm install
- 
 script:
 - npm run deploy
