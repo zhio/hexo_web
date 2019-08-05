@@ -1,0 +1,63 @@
+# Menu
+menu:
+  主页: /
+  归档: /archives
+  相册: /gallery
+  关于: /about
+rss: /atom.xml
+
+
+# Miscellaneous
+favicon: /favicon.ico
+brand: /images/hexo.svg
+
+# Ocean Video
+# Because I put videos in multiple formats on the same path, I just labeled the path here.
+ocean:
+  overlay: true
+  path: /images/ocean/
+  brand: /images/hexo-inverted.svg
+
+# Content
+excerpt_link: 阅读全文...
+share_text: 分享
+nav_text:
+  page_prev: 上一页
+  page_next: 下一页
+  post_prev: 前一篇
+  post_next: 后一篇
+
+# fancybox
+fancybox: true
+
+# RSS
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
+
+# Local search
+search_text: 搜索
+# Dependencies: https://github.com/flashlab/hexo-generator-search
+local_search:
+  enable: true
+  # if auto, trigger search by changing input
+  # if manual, trigger search by pressing enter key or search button
+  trigger: auto
+  # show top n results per article, show all results by setting to -1
+  top_n_per_article: 1
+  unescape: true
+
+# Gitalk
+gitalk:
+  enable: true # true
+  clientID: e7815f2f2cd9757f08b8 # GitHub Application Client ID
+  clientSecret: 249c25197ec4f94aa960aa2ba0a94b5fdc928439 # Client Secret
+  repo: gitalk # Repository name
+  owner: zhio # GitHub ID
+  admin: zhio # GitHub ID
