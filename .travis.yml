@@ -20,4 +20,4 @@ install:
 - npm install hexo-cli -g
 - npm install
 script:
-- cross-env YUQUE_TOKEN=$yuque_token npm run deploy
+- npm run deploy
