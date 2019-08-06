@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle:
-description:
+title:  西瓜的夏天
+subtitle: 凡心所向 素履所往 生如逆旅 一苇以航
+description: “写生活的点滴，与其他”
 keywords:
-author: John Doe
-language:
+author: Gao Pengfei
+language: zh-CN
 timezone:
 
 # URL
