@@ -103,11 +103,13 @@ The [feathericon](https://feathericon.com) in the menu is programmed ordely in "
 
 ### Plugins
 
-+ **Local search** - Generate an xml index file using the plugin [hexo-generator-search](https://github.com/hexojs/hexo-theme-landscape).
++ [hexo-generator-search](https://github.com/hexojs/hexo-theme-landscape) Local search
+	
   ```yml
   $ npm install hexo-generator-searchdb --save
   ```
-  Then add the plugin configuration for hexo's configuration file `_config.yml` (note: not the theme's configuration file, the theme configuration file Ocean has been configured):
+  Then add the plugin configuration for hexo's configuration file `_config.yml` (note: not the theme's configuration file):
+  
   ```yml
   # Hexo-generator-search
   search:
@@ -116,9 +118,31 @@ The [feathericon](https://feathericon.com) in the menu is programmed ordely in "
     format: html
   ```
 
-+ **RSS** - RSS - If you would like to enable the RSS, the hexo-generate-feed plugin is also required.
++ [hexo-generate-feed](https://github.com/hexojs/hexo-generator-feed) RSS
+
   ```yml
   $ npm install hexo-generator-feed --save
+  ```
+  
+  Then add the plugin configuration for hexo's configuration file `_config.yml` (note: not the theme's configuration file):
+  
+  ```yml
+  feed:
+      type: atom
+      path: atom.xml
+      limit: 20
+      hub:
+      content:
+      content_limit: 140
+      content_limit_delim: ' '
+      order_by: -date	
+  ```
+  
++ [hexo-generator-index-pin-top](https://github.com/netcan/hexo-generator-index-pin-top)
+	
+	``` bash
+  $ npm uninstall hexo-generator-index --save
+  $ npm install hexo-generator-index-pin-top --save
   ```
 
 ### Post poster
@@ -126,11 +150,12 @@ The [feathericon](https://feathericon.com) in the menu is programmed ordely in "
 ``` md
 ---
 title: Post name
+
 photos: [
         ["img_url"],
         ["img_url"]
         ]
----        
+---
 ```
 
 ### Gallery
@@ -139,6 +164,7 @@ Need to write in the head of the markdown, this is not a good way to write, I ho
 ``` md
 ---
 title: Gallery
+
 albums: [
         ["img_url","img_caption"],
         ["img_url","img_caption"]
@@ -146,22 +172,24 @@ albums: [
 ---
 ```
 
-### Post top
+### Toc
 
-Install plugin [hexo-generator-index-pin-top](https://github.com/netcan/hexo-generator-index-pin-top)：
+Use Tocbot to parse the title tags (h1~h6) in the content and insert the directory. 
 
-``` yml
-$ npm uninstall hexo-generator-index --save
-$ npm install hexo-generator-index-pin-top --save
-```
++ ocean/_config.yml
 
-Add `top: ture` to the Front-matter area of the post that needs to be pinned, example:
+	``` bash
+	# Toc
+  toc: true
+	```
++ If Toc is turned on in ocean/_config.yml, then Tocbot will generate a Toc article directory in the title tag of each blog parsing content, but not all blogs require Toc, so in the Front-matter section of markdown Can be closed:
 
-``` md
+	``` md
+	---
+  toc: false
+  ---
+	```
+
 ---
-title: Ocean
-author: zhwangart
-date: 2019-07-18 15:45:03
-top: ture
----
-```
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Ocean</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/zhwangart/hexo-theme-ocean" property="cc:attributionName" rel="cc:attributionURL">zhwangart</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.

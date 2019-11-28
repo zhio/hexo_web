@@ -15,7 +15,7 @@ brand: /images/hexo.svg
 # Because I put videos in multiple formats on the same path, I just labeled the path here.
 ocean:
   overlay: true
-  path: /images/ocean/
+  path: https://giligili-1251664893.cos.ap-chengdu.myqcloud.com/
   brand: /images/hexo-inverted.svg
 
 # Content
@@ -60,4 +60,5 @@ gitalk:
   clientSecret: 249c25197ec4f94aa960aa2ba0a94b5fdc928439 # Client Secret
   repo: gitalk # Repository name
   owner: zhio # GitHub ID
-  admin: zhio # GitHub ID
+  
+min: zhio # GitHub ID
