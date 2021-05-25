@@ -3,5 +3,3 @@ Host github.com
     StrictHostKeyChecking no
     IdentityFile ~/.ssh/id_rsa
     IdentitiesOnly yes
-    UseKeychain yes
-    AddKeysToAgent yes
