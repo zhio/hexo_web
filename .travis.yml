@@ -13,8 +13,8 @@ before_install:
 - cp .travis/id_rsa  ~/.ssh/id_rsa
 - chmod 600 ~/.ssh/id_rsa
 - eval $(ssh-agent)
-- ssh-add -K ~/.ssh/id_rsa | 
 - cp .travis/ssh_config ~/.ssh/config
+- ssh-add -K ~/.ssh/id_rsa
 - git config --global user.name "zhio"
 - git config --global user.email 1406816741@qq.com
 install:
